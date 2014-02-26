@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Capirca policy checker</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="js/custom.js"></script>
+ </head>
+ <body>
+  <h1>Capirca policy checker</h1>
+  <div id="selection">
+   <table>
+    <thead>
+     <tr>
+      <th>All policies</th>
+      <th>UTwente inbound-outbound</th>
+     </tr>
+    </thead>
+    <tr>
+     <td>
+      <form id="check_acl">
+       <table>
+        <tr>
+         <td><label for="policy_file">Policy file:</label></td>
+         <td><select id="policy_file"></select></td>
+        </tr>
+        <tr>
+         <td>Protocols:</td>
+         <td>
+          <input id="protocols_acl_tcp" class="protocols_acl" type="checkbox" value="tcp" checked="checked">
+          <label for="protocols_acl_tcp">TCP</label>
+          <input id="protocols_acl_udp" class="protocols_acl" type="checkbox" value="udp">
+          <label for="protocols_acl_udp">UDP</label>
+          <input id="protocols_acl_icmp" class="protocols_acl" type="checkbox" value="icmp">
+          <label for="protocols_acl_icmp">ICMP</label>
+         </td>
+        </tr>
+        <tr>
+         <td><label for="source_addresses">Source Host(s):</label></td>
+         <td><input id="source_addresses" type="text" value="any"></td>
+        </tr>
+        <tr>
+         <td><label for="source_ports">Source Port(s):</label></td>
+         <td><input id="source_ports" type="text" value="1025"></td>
+        </tr>
+        <tr>
+         <td><label for="destination_addresses">Destination Host(s):</label></td>
+         <td><input id="destination_addresses" type="text" value="200.1.1.1"></td>
+        </tr>
+        <tr>
+         <td><label for="destination_ports">Destination Port(s):</label></td>
+         <td><input id="destination_ports" type="text" value="80"></td>
+        </tr>
+        <tr>
+         <td>&nbsp;</td>
+         <td><input type="submit" value="Submit"></td>
+        </tr>
+       </table>
+      </form>
+     </td>
+     <td>
+      <form id="check_utnet">
+       <table>
+        <tr>
+         <td>Protocols:</td>
+         <td>
+          <input id="protocols_utnet_tcp" class="protocols_utnet" type="checkbox" value="tcp" checked="checked">
+          <label for="protocols_utnet_tcp">TCP</label>
+          <input id="protocols_utnet_udp" class="protocols_utnet" type="checkbox" value="udp">
+          <label for="protocols_utnet_udp">UDP</label>
+          <input id="protocols_utnet_icmp" class="protocols_utnet" type="checkbox" value="icmp">
+          <label for="protocols_utnet_icmp">ICMP</label>
+         </td>
+        </tr>
+        <tr>
+         <td><label for="addresses1">First Host(s):</label></td>
+         <td><input id="addresses1" type="text" value="130.89.1.1"></td>
+        </tr>
+        <tr>
+         <td><label for="ports1">First Port(s) 1:</label></td>
+         <td><input id="ports1" type="text" value="1025"></td>
+        </tr>
+        <tr>
+         <td><label for="addresses2">Second Host(s) 2:</label></td>
+         <td><input id="addresses2" type="text" value="200.1.1.1"></td>
+        </tr>
+        <tr>
+         <td><label for="ports2">Second Port(s) 2:</label></td>
+         <td><input id="ports2" type="text" value="80"></td>
+        </tr>
+        <tr>
+         <td>&nbsp;</td>
+         <td><input type="submit" value="Submit"></td>
+        </tr>
+       </table>
+      </form>
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div id="result">&nbsp;</div>
+ </body>
+</html>
