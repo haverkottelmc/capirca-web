@@ -117,7 +117,10 @@ class AclCheckCgi:
       for address1 in addresses1:
         for address2 in addresses2:
           if protocol == 'icmp':
-            results += self.check_utnet(protocol, address1, 0, address2, 0)
+            if action == 'check_utnet':
+              results += self.check_utnet(protocol, address1, 0, address2, 0)
+            elif action == 'check_acl':
+              results.append(self.check_acl(policy_file, protocol, address1, 0, address2, 0))
           else:
             if ports1 is None or ports2 is None:
               raise AclCheckCgiException('No ports have been specified for TCP / UDP.')
